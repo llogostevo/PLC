@@ -13,9 +13,12 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
+        firstName = request.form['firstName']
+        secondName = request.form['secondName']
         email = request.form['emailAddress']
         password = request.form['password']
         userType = "student"
+
         db = get_db()
         error = None
 
@@ -27,8 +30,8 @@ def register():
         if error is None:
             try:
                 db.execute(
-                    "INSERT INTO user (email, password, userType) VALUES (?, ?, ?)",
-                    (email, generate_password_hash(password), userType),
+                    "INSERT INTO user (firstName, secondName, email, password, userType) VALUES (?, ?, ?, ?, ?)",
+                    (firstName, secondName, email, generate_password_hash(password), userType),
                 )
                 db.commit()
             except db.IntegrityError:
@@ -85,7 +88,7 @@ def load_logged_in_user():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('auth.login'))
 
 # REQUIRE AUTHENTICATION IN OTHER VIEWS
 def login_required(view):
