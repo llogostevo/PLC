@@ -286,302 +286,218 @@
   
   <!-- PAGE CONTENT -->
         <div class="content">
-          <!--  -->
-          <div class="pb-5">
 
-            <div class="row g-4">
-
-            <h1>Dashboard</h1>
-            <!-- Sm - small  screen / md - md screen / lg - large screen -->
-            <!-- CARD FOR GRAPH -->
-            <div class="col-sm-12 col-md-8 col-lg-6">
-              <div class="card border border-light " style="width: 25rem;">         
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <h5 class="mb-2">Overall Performance</h5>
-                      <h6 class="text-700">Computer Science</h6>
+          <div class="container">
+            <h1>Learning Checklist Dashboard</h1>
+          <div class="row g-2">
+            <div class="col-12">
+              <div class="p-3 ">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Filters</h5>
+                      <form>
+                        <div class="row g-2">
+                          <div class="col-12">
+                            <label for="dateRange">Date Range</label>
+                            <select id="dateRange" class="form-control custom-select">
+                              <option class="card-text" selected>Select Date Range</option>
+                              <option value="1">6 Weeks (1.5 months)</option>
+                              <option value="2">12 Weeks (3 months)</option>
+                              <option value="3">24 Weeks (6 months)</option>
+                              <option value="4">1 Year</option>
+                              <option value="5">2 Years</option>
+                            </select>
+                          </div>
+                          <div class="col-6">
+                            <label for="startDate">Start</label>
+                            <input id="startDate" class="form-control" type="date" />
+                          </div>
+                          <div class="col-6">
+                            <label for="endDate">End</label>
+                            <input id="endDate" class="form-control" type="date" />
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
-                  <div class="pb-4 pt-3">
-                    <canvas id="courseProgress"></canvas>
-                  </div>
                 </div>
-              </div>
-            </div>
-        <!-- END CARD FOR GRAPH -->
-        
-            <!-- CARD FOR GRAPH -->
-            <div class="col-sm-12 col-md-8 col-lg-6">
-              <div class="card border border-light" style="width: 25rem;">         
-                <div class="card-body" >
-                  <div class="d-flex justify-content-between">
-                    <div>
-                      <h5 class="mb-2">Unit 1: Computer Systems</h5>
-                      <h6 class="text-700">Computer Science</h6>
-                    </div>
-                  </div>
-                  <div class="pb-4 pt-3">
-                    <canvas id="unit1Progress"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-        <!-- END CARD FOR GRAPH -->
-
-            <!-- CARD FOR GRAPH -->
-            <div class="col-sm-12 col-md-8 col-lg-6">
-            <div class="card border border-light" style="width: 25rem;">         
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h5 class="mb-2">Unit 2: Algorithms</h5>
-                    <h6 class="text-700">Computer Science</h6>
-                  </div>
-                </div>
-                <div class="pb-4 pt-3">
-                  <canvas id="unit2Progress"></canvas>
-                </div>
-              </div>
             </div>
           </div>
-        <!-- END CARD FOR GRAPH -->
-        
-
-<!--     END ROW PROG GRAPHS -->
+          <div class="row g-2">
+            <div class="col-sm-6 col-md-4 col-12">
+              <div class="p-3 ">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Overall Progress</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Computer Science</h6>
+                      <canvas id="courseProgress"></canvas>
+                    </div>
+                  </div>
+                </div>
             </div>
-            <!--   ROW FOR TABLE OF PROGRESS -->
-
-            <div class="row g-4 margin-12">
-
-              <!-- TABLE CARD OUTLINE -->
-                <div class="card border border-light">         
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <div>
-                        <h5 class="mb-2">Unit 1: Algorithms</h5>
-                        <h6 class="text-700">Computer Science</h6>
-                      </div>
+            <div class="col-sm-6 col-md-4 col-12">
+              <div class="p-3 ">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Unit 1</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Computer Systems</h6>
+                      <canvas id="unit1Progress"></canvas>
                     </div>
-
-                    <div class="d-flex align-items-center justify-content-end my-3">
-                      <div id="bulk-select-replace-element"><button class="btn btn-phoenix-success btn-sm" type="button"><span class="fas fa-plus" data-fa-transform="shrink-3 down-2"></span><span class="ms-1">New</span></button></div>
-                      <!-- Drop down to apply bulk actions to a heading -->
-                      <div class="d-none ms-3" id="bulk-select-actions">
-                        <div class="d-flex"><select class="form-select form-select-sm" aria-label="Bulk actions">
-                            <option selected="selected">Bulk actions</option>
-                            <option value="Delete">Not Studied</option>
-                            <option value="Archive">Uncertain</option>
-                            <option value="Delete">Developing</option>
-                            <option value="Archive">Consolidating</option>
-                            <option value="Delete">Certain</option>
-                          </select><button class="btn btn-phoenix-danger btn-sm ms-2" type="button">Apply</button></div>
-                      </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-12">
+              <div class="p-3 ">
+                  <div class="card" >
+                    <div class="card-body">
+                      <h5 class="card-title">Unit 2</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Algorithms and programming</h6>
+                      <canvas id="unit2Progress"></canvas>
                     </div>
-                    <div id="tableExample" data-list='{"valueNames":["Topic","Subtopic", "Confidence Level"]}'>
-                      <div class="table-responsive mx-n1 px-1 mb-3">
-                        <table class="table table-sm border-top border-200 fs--1 mb-0">
+                  </div>
+                </div>
+            </div>
+            
+            <!-- start of table card -->
+            <div class="col-12">
+              <div class="p-3">
+                  <div class="card">
+                    <div class="card-body table-responsive">
+                      <h5 class="card-title">Learning Checklist - Computer science Unit 1: Computer Systems</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Bobby Jones</h6>
+
+                      <table class="table table-bordered table-fixed">
                           <thead>
                             <tr>
-                              <th class="white-space-nowrap fs--1 align-middle ps-0" style="max-width:20px; width:18px;">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" id="bulk-select-example" type="checkbox" data-bulk-select='{"body":"bulk-select-body","actions":"bulk-select-actions","replacedElement":"bulk-select-replace-element"}' /></div>
-                              </th>
-                              <th class="sort align-middle ps-3" data-sort="topic">Topic</th>
-                              <th class="sort align-middle" data-sort="subTopic">Subtopic</th>
-                              <th class="sort align-middle text-center" data-sort="confidence">Confidence Level</th>
-                              <th class="sort text-end align-middle pe-0" scope="col">ACTION</th>
+                              <th class ="text-center" scope="col">Topic</th>
+                              <th class ="text-center" scope="col">Sub-Topic</th>
+                              <th class ="text-center" scope="col">Judgement</th>
                             </tr>
                           </thead>
-                          <tbody class="list" id="bulk-select-body">
+                          <tbody>
                             <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Anna&quot;,&quot;email&quot;:&quot;anna@example.com&quot;,&quot;age&quot;:18}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">ALU</td>
-                              <td class="align-middle text-center confidence">Secure</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
+                              <td rowspan="3">1.1.1 Structure and function of the processor</td>
+                              <td>(a) The Arithmetic and Logic Unit; ALU, Control Unit and Registers (Program Counter; PC, Accumulator; ACC, Memory Address Register; MAR, Memory Data Register; MDR, Current Instruction Register; CIR). Buses: data, address and control: how this relates to assembly language programs</td>
+                              <td>
+                                <div class="text-center">
+                                <div class="btn-group-vertical " role="group" aria-label="Basic mixed styles example">
+                                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="You haven't studied this topic aside from when you were taught it">Not Studied</button>
+                                  <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="You don't understand this at all, you need help with the topic again from your teacher">Need Help</button>
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="left" title="You understand this but you need to put more time in to study this topic">Needs More Study</button>
+                                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="You have a good understanding of this topic and would achieve at least your target grade if it came up">Understanding</button>
+                                  <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="left" title="You are very strong at this topic and are likely to get full marks if it came up">Expert</button>   
+                                </div>
                                 </div>
                               </td>
                             </tr>
                             <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Homer&quot;,&quot;email&quot;:&quot;homer@example.com&quot;,&quot;age&quot;:35}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">CU</td>
-                              <td class="align-middle text-center confidence">Secure</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
+                              <td>(b) The Fetch-Decode-Execute Cycle; including its effects on registers.</td>
+                              <td>
+                                <div class="text-center">
+                                <div class="btn-group-vertical " role="group" aria-label="Basic mixed styles example">
+                                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="You haven't studied this topic aside from when you were taught it">Not Studied</button>
+                                  <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="You don't understand this at all, you need help with the topic again from your teacher">Need Help</button>
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="left" title="You understand this but you need to put more time in to study this topic">Needs More Study</button>
+                                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="You have a good understanding of this topic and would achieve at least your target grade if it came up">Understanding</button>
+                                  <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="left" title="You are very strong at this topic and are likely to get full marks if it came up">Expert</button>   
+                                </div>
                                 </div>
                               </td>
                             </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Oscar&quot;,&quot;email&quot;:&quot;oscar@example.com&quot;,&quot;age&quot;:52}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Registers (PC,ACC,MAR,MDR,CIR)</td>
-                              <td class="align-middle text-center confidence">Secure</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
+                              <td>(c)	 The factors affecting the performance of the CPU:clock speed, number of cores, cache</td>
+                              <td>
+                                <div class="text-center">
+                                <div class="btn-group-vertical " role="group" aria-label="Basic mixed styles example">
+                                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="You haven't studied this topic aside from when you were taught it">Not Studied</button>
+                                  <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="You don't understand this at all, you need help with the topic again from your teacher">Need Help</button>
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="left" title="You understand this but you need to put more time in to study this topic">Needs More Study</button>
+                                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="You have a good understanding of this topic and would achieve at least your target grade if it came up">Understanding</button>
+                                  <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="left" title="You are very strong at this topic and are likely to get full marks if it came up">Expert</button>   
                                 </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Emily&quot;,&quot;email&quot;:&quot;emily@example.com&quot;,&quot;age&quot;:30}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Buses (Data, Address, Control)</td>
-                              <td class="align-middle text-center confidence">Need Help</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Jara&quot;,&quot;email&quot;:&quot;jara@example.com&quot;,&quot;age&quot;:25}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Assembly language</td>
-                              <td class="align-middle text-center confidence">Secure</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Clark&quot;,&quot;email&quot;:&quot;clark@example.com&quot;,&quot;age&quot;:39}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Fetch-Decode-Execute Cycle</td>
-                              <td class="align-middle text-center confidence">Consolidating</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Jennifer&quot;,&quot;email&quot;:&quot;jennifer@example.com&quot;,&quot;age&quot;:52}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">CPU performance (clock speed,no.cores,cache)</td>
-                              <td class="align-middle text-center confidence">Consolidating</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Tony&quot;,&quot;email&quot;:&quot;tony@example.com&quot;,&quot;age&quot;:30}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Pipelining to improve efficiency</td>
-                              <td class="align-middle text-center confidence">Not Studied</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Tom&quot;,&quot;email&quot;:&quot;tom@example.com&quot;,&quot;age&quot;:25}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Von Neuman Architecture</td>
-                              <td class="align-middle text-center confidence">Not Studied</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Michael&quot;,&quot;email&quot;:&quot;michael@example.com&quot;,&quot;age&quot;:39}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Harvard Architecture</td>
-                              <td class="align-middle text-center confidence">Not Studied</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="fs--1 align-middle">
-                                <div class="form-check mb-0 fs-0"><input class="form-check-input" type="checkbox" data-bulk-select-row="{&quot;name&quot;:&quot;Structure and function of the processor&quot;,&quot;subTopic&quot;:&quot;Contemporary processor architecture&quot;,&quot;confidence&quot;:&quot;Not Studied&quot;}" /></div>
-                              </td>
-                              <td class="align-middle ps-3 topic">Structure and function of the processor</td>
-                              <td class="align-middle ps-3 subTopic">Contemporary processor architecture</td>
-                              <td class="align-middle text-center confidence">Not Studied</td>
-                              <td class="align-middle white-space-nowrap text-end pe-0">
-                                <div class="font-sans-serif btn-reveal-trigger position-static"><button class="btn btn-sm dropdown-toggle dropdown-caret-none transition-none btn-reveal fs--2" type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"><span class="fas fa-ellipsis-h fs--2"></span></button>
-                                  <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">View</a><a class="dropdown-item" href="#!">Export</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item text-danger" href="#!">Remove</a>
-                                  </div>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <p class="mb-2">Click the button to get selected rows</p><button class="btn btn-warning" data-selected-rows="data-selected-rows">Get Selected Rows</button><pre id="selectedRows"></pre>
                     </div>
-              
-<!-- CLOSE TABLE CARD DIVS -->
+                  </div>
+                </div>
+            
             </div>
+            <!-- end of table card -->
+
+            <!-- start of table card -->
+            <div class="col-12">
+              <div class="p-3">
+                  <div class="card">
+                    <div class="card-body table-responsive">
+                      <h5 class="card-title">Learning Checklist - Computer science Unit 2: Algorithms and Programming</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Bobby Jones</h6>
+
+                      <table class="table table-bordered table-responsive table-fixed">
+                          <thead>
+                            <tr>
+                              <th class ="text-center" scope="col">Topic</th>
+                              <th class ="text-center" scope="col">Sub-Topic</th>
+                              <th class ="text-center" scope="col">Judgement</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td rowspan="3">1.1.1 Structure and function of the processor</td>
+                              <td>(a) The Arithmetic and Logic Unit; ALU, Control Unit and Registers (Program Counter; PC, Accumulator; ACC, Memory Address Register; MAR, Memory Data Register; MDR, Current Instruction Register; CIR). Buses: data, address and control: how this relates to assembly language programs</td>
+                              <td>
+                                <div class="text-center">
+                                <div class="btn-group-vertical " role="group" aria-label="Basic mixed styles example">
+                                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="You haven't studied this topic aside from when you were taught it">Not Studied</button>
+                                  <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="You don't understand this at all, you need help with the topic again from your teacher">Need Help</button>
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="left" title="You understand this but you need to put more time in to study this topic">Needs More Study</button>
+                                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="You have a good understanding of this topic and would achieve at least your target grade if it came up">Understanding</button>
+                                  <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="left" title="You are very strong at this topic and are likely to get full marks if it came up">Expert</button>   
+                                </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>(b) The Fetch-Decode-Execute Cycle; including its effects on registers.</td>
+                              <td>
+                                <div class="text-center">
+                                <div class="btn-group-vertical " role="group" aria-label="Basic mixed styles example">
+                                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="You haven't studied this topic aside from when you were taught it">Not Studied</button>
+                                  <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="You don't understand this at all, you need help with the topic again from your teacher">Need Help</button>
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="left" title="You understand this but you need to put more time in to study this topic">Needs More Study</button>
+                                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="You have a good understanding of this topic and would achieve at least your target grade if it came up">Understanding</button>
+                                  <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="left" title="You are very strong at this topic and are likely to get full marks if it came up">Expert</button>   
+                                </div>
+                                </div>
+                              </td>
+                            </tr>
+                              <td>(c)	 The factors affecting the performance of the CPU:clock speed, number of cores, cache</td>
+                              <td>
+                                <div class="text-center">
+                                <div class="btn-group-vertical " role="group" aria-label="Basic mixed styles example">
+                                  <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="You haven't studied this topic aside from when you were taught it">Not Studied</button>
+                                  <button type="button" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="You don't understand this at all, you need help with the topic again from your teacher">Need Help</button>
+                                  <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="left" title="You understand this but you need to put more time in to study this topic">Needs More Study</button>
+                                  <button type="button" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="You have a good understanding of this topic and would achieve at least your target grade if it came up">Understanding</button>
+                                  <button type="button" class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="left" title="You are very strong at this topic and are likely to get full marks if it came up">Expert</button>   
+                                </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+            
+            </div>
+            <!-- end of table card -->
+
+            
           </div>
-        </div>
-<!-- CLOSE TABLE CARD DIVS -->
+          <!-- END of CARDS -->
               
-              
-              
-              <!--END TABLE ROW  -->
-            </div>
-
-
-
-
-<!-- pb5 close -->
-</div>
-<!-- rowg4 close -->
-</div>
             <!-- CLOSING DIV OF PAGE CONTENT  -->
           </div> 
 
@@ -622,91 +538,88 @@
           navbarVertical.classList.add('navbar-darker');
         }
       </script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-      <!-- CHART JS SCRIPT -->
-      <script>
-        const ctx = document.getElementById('courseProgress');
-    
-        new Chart(ctx, {
-          type: 'doughnut',
-    data: {
-      labels: [
-        'Not Studied',
-        'Need Help',
-        'Developing',
-        'Consolidating',
-        'Secure'
-      ],
-      datasets: [{
-        data: [10, 7, 25, 50, 8],
-        backgroundColor: [
-          'rgb(211,211,211)',
-          'rgb(255, 99, 132)',
-          'rgb(255, 205, 86)',
-          'rgb(143,188,143)',
-          'rgb(54, 162, 235)'
-        ], 
-        hoverOffset: 25
-      }],
-    }
-  });
-      </script>
-
-<script>
-  const ctx2 = document.getElementById('unit1Progress');
-
-  new Chart(ctx2, {
-    type: 'doughnut',
-    data: {
-      labels: [
-        'Not Studied',
-        'Need Help',
-        'Developing',
-        'Consolidating',
-        'Secure'
-      ],
-      datasets: [{
-        data: [10, 7, 25, 50, 8],
-        backgroundColor: [
-          'rgb(211,211,211)',
-          'rgb(255, 99, 132)',
-          'rgb(255, 205, 86)',
-          'rgb(143,188,143)',
-          'rgb(54, 162, 235)'
-        ], 
-        hoverOffset: 25
-      }],
-    }
-  });
-</script>
-<script>
-  const ctx3 = document.getElementById('unit2Progress');
-
-  new Chart(ctx3, {
-    type: 'doughnut',
-    data: {
-      labels: [
-        'Not Studied',
-        'Need Help',
-        'Developing',
-        'Consolidating',
-        'Secure'
-      ],
-      datasets: [{
-        data: [10, 7, 25, 50, 8],
-        backgroundColor: [
-          'rgb(211,211,211)',
-          'rgb(255, 99, 132)',
-          'rgb(255, 205, 86)',
-          'rgb(143,188,143)',
-          'rgb(54, 162, 235)'
-        ], 
-        hoverOffset: 25
-      }],
-    }
-  });
-</script>
+      
+        <script>
+          const ctx = document.getElementById('courseProgress');
+      
+          new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              labels: [
+                'Not Studied',
+                'Need Help',
+                'Needs More Study',
+                'Understanding',
+                'Expert'
+              ],
+              datasets: [{
+                data: [7, 25, 29, 25, 32],
+                backgroundColor: [
+                  'rgb(220,220,220)',
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 205, 86)',
+                  'rgb(143,188,143)',
+                  'rgb(54, 162, 235)'
+                ], hoverOffset: 25
+              }]
+            }
+          });
+        </script>
+        <script>
+          const ctx2 = document.getElementById('unit1Progress');
+      
+          new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+              labels: [
+                'Not Studied',
+                'Need Help',
+                'Needs More Study',
+                'Understanding',
+                'Expert'
+              ],
+              datasets: [{
+                data: [7, 25, 29, 25, 32],
+                backgroundColor: [
+                  'rgb(220,220,220)',
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 205, 86)',
+                  'rgb(143,188,143)',
+                  'rgb(54, 162, 235)'
+                ], hoverOffset: 25
+              }]
+            }
+          });
+        </script>
+        <script>
+          const ctx3 = document.getElementById('unit2Progress');
+      
+          new Chart(ctx3, {
+            type: 'doughnut',
+            data: {
+              labels: [
+                'Not Studied',
+                'Need Help',
+                'Needs More Study',
+                'Understanding',
+                'Expert'
+              ],
+              datasets: [{
+                data: [7, 25, 29, 25, 32],
+                backgroundColor: [
+                  'rgb(220,220,220)',
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 205, 86)',
+                  'rgb(143,188,143)',
+                  'rgb(54, 162, 235)'
+                ], hoverOffset: 25
+              }]
+            }
+          });
+        </script>
     </main>
     <!-- ===============================================-->
     <!--    End of Main Content-->
